@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>study-sso-example-server</title>
+</head>
+<body>
+<form action="login" method="post">
+    <!--<input type="hidden" name="backUrl" value="${backUrl}" />-->
+    <!--<input  id="msg1" type="text" th:value="${param.backUrl}" />-->
+    <!--<input  id="msg2" type="text" th:value="${#httpServletRequest.getAttribute('backUrl')}" />-->
+    <input name="backUrl1" type="text" th:value="${param.backUrl[0]}" />
+    <input name="backUrl" type="text" th:value="${#httpServletRequest.getParameter('backUrl')}" />
+    <table>
+        <tr>
+            <td>username:</td>
+            <td><input type="text" id="username" name="username"/></td>
+        </tr>
+        <tr>
+            <td>password:</td>
+            <td><input type="password" id="password" name="password"/></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="login"/></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
